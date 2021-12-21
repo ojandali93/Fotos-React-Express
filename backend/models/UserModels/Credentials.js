@@ -59,8 +59,7 @@ const Credential = database.define(
     },
   },
   {
-    createdAt: sequelize.DATE,
-    updatedAt: sequelize.DATE
+    timestamps:true
   }
 )
 
@@ -72,4 +71,4 @@ Credential.sync()
     console.error(error)
   })
 
-module.exports = Credentials
+module.exports = Credential
