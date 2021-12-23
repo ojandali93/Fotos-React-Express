@@ -1,19 +1,19 @@
 const router = require("express").Router()
-const UsersController = require("../../controllers/UsersController.js");
-const UserController = require("../../controllers/UserController.js");
+const MultiUserController = require("../../controllers/MultiUserController.js");
+const SingleUserController = require("../../controllers/SingleUserController.js");
 
 router
   .route('/')
-  .get(UsersController.get)
-  .post(UsersController.post)
-  .delete(UsersController.delete)
-  .put(UsersController.put)
+  .get(MultiUserController.get)
+  .post(MultiUserController.post)
+  .delete(MultiUserController.delete)
+  .put(MultiUserController.put)
 
 router
   .route('/:username')
-  .get(UserController.get)
-  .post(UserController.post)
-  .delete(UserController.delete)
-  .patch(UserController.patch)
+  .get(SingleUserController.get)
+  .post(SingleUserController.post)
+  .delete(SingleUserController.delete)
+  .patch(SingleUserController.patch)
 
 module.exports = router;
