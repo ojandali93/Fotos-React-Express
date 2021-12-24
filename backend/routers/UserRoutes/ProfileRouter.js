@@ -6,7 +6,7 @@ const ProfileController = require("../../controllers/ProfileController.js");
 //   .get(UsersController.get)
 
 router
-  .route('/profile/:username')
+  .route('/:username')
   .get(ProfileController.get)
   .post(ProfileController.post)
   .delete(ProfileController.delete)

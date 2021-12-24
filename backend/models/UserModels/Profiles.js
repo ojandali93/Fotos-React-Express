@@ -1,29 +1,26 @@
 const sequelize = require('sequelize');
 const database = require('../database.js');
-const sequelize_file = requre('sequelize-file');
+// const sequelize_file = reqiure('sequelize-file');
 
-const profile_picture = sequelize_file({
-  attribute: 'profile_picture',
-  mimetype: /^image/,
-  crop: true,
-  sizes: {
-    small: 64, 
-    big: 128, 
-    large: 256,
-    x_large: 512
-  }
-});
+// const profile_picture = sequelize_file({
+//   attribute: 'profile_picture',
+//   mimetype: /^image/,
+//   crop: true,
+//   sizes: {
+//     small: 64, 
+//     big: 128, 
+//     large: 256,
+//     x_large: 512
+//   }
+// });
 
-const Profile = new sequelize.define(
+const Profile = database.define(
   'profile',
   {
     id: {
       type: sequelize.INTEGER, 
       autoIncrement: true, 
       primaryKey: true,
-    },
-    profile_pic: {
-
     },
     bio: {
       type: sequelize.STRING,
@@ -110,12 +107,11 @@ const Profile = new sequelize.define(
     }
   },
   {
-    createdAt: sequelize.DATE,
-    updatedAt: sequelize.DATE
+    timestamps:true
   }
 ) 
 
-profile_picture.addTo(Profile);
+// profile_picture.addTo(Profile);
 
 Profile.sync()
   .then((data) => {

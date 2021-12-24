@@ -7,7 +7,7 @@ const controller = {
   post:(req, res) => {
     console.log('success post')
   },
-  put:(req, res) => {
+  patch:(req, res) => {
     console.log('success put')
   },
   delete:(req, res) => {
