@@ -1,5 +1,7 @@
 const sequelize = require('sequelize');
 const database = require('../database.js')
+const userModel = require('../UserModels/Credentials.js')
+const postModel = require('../PostModels/Posts.js')
 
 const Download = database.define(
   'download',
@@ -14,6 +16,9 @@ const Download = database.define(
     timestamp: true
   }
 )
+
+userModel.hasMany(Download)
+postModel.hasMany(Download)
 
 Download.sync()
   .then((data) => {                                                                    

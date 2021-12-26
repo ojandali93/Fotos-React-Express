@@ -1,5 +1,6 @@
 const sequelize = require('sequelize');
 const database = require('../database.js')
+const userModel = require('../UserModels/Credentials.js')
 
 const Post = database.define(
   'post',
@@ -63,6 +64,8 @@ const Post = database.define(
     timestamp: true
   }
 )
+
+userModel.hasMany(Post)
 
 Post.sync()
   .then((data) => {                                                                    

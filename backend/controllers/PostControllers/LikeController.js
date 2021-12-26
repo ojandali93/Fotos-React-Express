@@ -1,6 +1,6 @@
-const model = require("../../models/UserModels/Follows.js")
+const model = require("../../models/PostModels/Likes.js")
 
-const userController = {
+const controller = {
   get:(req, res) => {
     console.log('success get')
   },
@@ -15,10 +15,4 @@ const userController = {
   }
 }
 
-const followController = {
-  get:(req, res) => {
-    console.log('success get')
-  },
-}
-
-module.exports = {userController, followController};
+module.exports = controller;

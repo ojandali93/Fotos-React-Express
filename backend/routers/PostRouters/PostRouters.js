@@ -1,21 +1,18 @@
 const router = require("express").Router()
-const SingleProfileController = require("../../controllers/PostControllers/SignlePostController.js");
-const MultiProfileController = require("../../controllers/PostControllers/MultiplePostController.js");
+const controller = require("../../controllers/PostControllers/PostController.js");
 
 router
   .route('/')
-  .get(MultiProfileController.get)
-  .post(MultiProfileController.post)
-  .delete(MultiProfileController.delete)
-  .patch(MultiProfileController.patch)
-
-module.exports = router;
+  .get(controller.multiplePostController.get)
+  .post(controller.multiplePostController.post)
+  .delete(controller.multiplePostController.delete)
+  .patch(controller.multiplePostController.patch)
 
 router
   .route('/:reference_id')
-  .get(SingleProfileController.get)
-  .post(SingleProfileController.post)
-  .delete(SingleProfileController.delete)
-  .patch(SingleProfileController.patch)
+  .get(controller.singlePostController.get)
+  .post(controller.singlePostController.post)
+  .delete(controller.singlePostController.delete)
+  .patch(controller.singlePostController.patch)
 
 module.exports = router;

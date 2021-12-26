@@ -1,14 +1,15 @@
 const router = require("express").Router()
-const ProfileController = require("../../controllers/UserControllers/FollowController.js");
+const controller = require("../../controllers/UserControllers/FollowController.js");
 
 router
   .route('/:username')
-  .get(ProfileController.get)
+  .get(controller.followController.get)
 
 router
   .route('/:followed/:following')
-  .post(ProfileController.post)
-  .patch(ProfileController.patch)
-  .delete(ProfileController.delete)
+  .get(controller.userController.get)
+  .post(controller.userController.post)
+  .patch(controller.userController.patch)
+  .delete(controller.userController.delete)
 
 module.exports = router;

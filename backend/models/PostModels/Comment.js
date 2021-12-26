@@ -1,5 +1,7 @@
 const sequelize = require('sequelize');
 const database = require('../database.js')
+const userModel = require('../UserModels/Credentials.js')
+const postModel = require('../PostModels/Posts.js')
 
 const Comment = database.define(
   'comment',
@@ -19,7 +21,8 @@ const Comment = database.define(
   }
 )
 
-
+userModel.hasMany(Comment)
+postModel.hasMany(Comment)
 
 Comment.sync()
   .then((data) => {                                                                    

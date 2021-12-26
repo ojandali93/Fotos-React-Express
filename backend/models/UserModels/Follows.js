@@ -9,26 +9,15 @@ const Follow = database.define(
       type: sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true
-    },
-    followed: {
-      type: sequelize.INTEGER,
-      allowNull: false,
-      validate: {
-        isInt: true
-      }
-    },
-    follower: {
-      type: sequelize.INTEGER,
-      allowNull: false,
-      validate: {
-        isInt: true
-      }
     }
   },
   {
     timestamps:true
   }
 )
+
+userModel.hasMany(Follow, {as: 'followed', foreignKey: {name: 'followed'}})
+userModel.hasMany(Follow, {as: 'follower', foreignKey: {name: 'follower'}})
 
 Follow.sync()
   .then((data) => {                                                                    

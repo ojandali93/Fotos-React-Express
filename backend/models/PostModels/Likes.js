@@ -1,5 +1,7 @@
 const sequelize = require('sequelize');
 const database = require('../database.js')
+const UserModel = require('../UserModels/Credentials.js')
+const PostModel = require('../PostModels/Posts.js')
 
 const Like = database.define(
   'like',
@@ -13,7 +15,10 @@ const Like = database.define(
   {
     timestamp: true
   }
-)
+) 
+
+UserModel.hasMany(Like, {as: 'credentialId', foreignKey: {name: 'credentialId'}})  
+PostModel.hasMany(Like, {as: 'postId', foreignKey: {name: 'postId'}})
 
 Like.sync()
   .then((data) => {                                                                    

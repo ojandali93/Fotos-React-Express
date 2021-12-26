@@ -1,5 +1,6 @@
 const sequelize = require('sequelize');
 const database = require('../database.js')
+const postModel = require('../PostModels/Posts')
 
 const Edit = database.define(
   'edit',
@@ -14,6 +15,9 @@ const Edit = database.define(
     timestamp: true
   }
 )
+
+postModel.hasMany(Edit, {as: 'original', foreignKey: {name: 'original'}})
+postModel.hasMany(Edit, {as: 'edit', foreignKey: {name: 'edit'}})
 
 Edit.sync()
   .then((data) => {                                                                    
