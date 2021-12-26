@@ -15,10 +15,11 @@ const Comment = database.define(
     }
   },
   {
-    createdAt: sequelize.DATE,
-    updatedAt: sequelize.DATE
+    timestamp: true
   }
 )
+
+
 
 Comment.sync()
   .then((data) => {                                                                    

@@ -11,8 +11,7 @@ const Edit = database.define(
     }
   },
   {
-    createdAt: sequelize.DATE,
-    updatedAt: sequelize.DATE
+    timestamp: true
   }
 )
 
