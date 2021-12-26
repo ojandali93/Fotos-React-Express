@@ -1,4 +1,4 @@
-const model = require("../models/UserModels/Credentials.js")
+const model = require("../../models/PostModels/Posts.js")
 
 const controller = {
   get:(req, res) => {
@@ -7,7 +7,7 @@ const controller = {
   post:(req, res) => {
     console.log('success users post')
   },
-  put:(req, res) => {
+  patch:(req, res) => {
     console.log('success users put')
   },
   delete:(req, res) => {

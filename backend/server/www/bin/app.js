@@ -9,6 +9,7 @@ const app = express();
 
 const UserRouter = require('../../../routers/UserRoutes/UserRoutes.js')
 const ProfileRouter = require('../../../routers/UserRoutes/ProfileRouter.js')
+const PostRouter = require('../../../routers/PostRouters/PostRouters.js')
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -17,5 +18,6 @@ app.use(morgan('dev'));
 
 app.use('/api/user', UserRouter)
 app.use('/api/profile', ProfileRouter)
+app.use('/api/post', PostRouter)
 
 module.exports = app;

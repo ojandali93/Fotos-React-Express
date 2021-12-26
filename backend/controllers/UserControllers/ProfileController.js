@@ -1,4 +1,4 @@
-const model = require("../models/UserModels/Profiles.js")
+const model = require("../../models/UserModels/Profiles.js")
 
 const controller = {
   get:(req, res) => {

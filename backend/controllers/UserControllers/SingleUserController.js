@@ -1,4 +1,4 @@
-const model = require("../models/UserModels/Credentials.js")
+const model = require("../../models/UserModels/Credentials.js")
 
 const controller = {
   get:(req, res) => {

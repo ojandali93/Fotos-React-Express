@@ -1,18 +1,5 @@
 const sequelize = require('sequelize');
 const database = require('../database.js')
-const sequelize_file = requre('sequelize-file');
-
-const post_picture = sequelize_file({
-  attribute: 'post_picture',
-  mimetype: /^image/,
-  crop: true,
-  sizes: {
-    small: 512, 
-    big: 1080, 
-    large: 1440,
-    x_large: 1920
-  }
-});
 
 const Post = database.define(
   'post',
@@ -73,12 +60,9 @@ const Post = database.define(
     }
   },
   {
-    createdAt: sequelize.DATE,
-    updatedAt: sequelize.DATE
+    timestamp: true
   }
 )
-
-post_picture.addTo(Post);
 
 Post.sync()
   .then((data) => {                                                                    

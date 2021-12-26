@@ -1,6 +1,6 @@
 const router = require("express").Router()
-const MultiUserController = require("../../controllers/MultiUserController.js");
-const SingleUserController = require("../../controllers/SingleUserController.js");
+const MultiUserController = require("../../controllers/UserControllers/MultiUserController.js");
+const SingleUserController = require("../../controllers/UserControllers/SingleUserController.js");
 
 router
   .route('/')
