@@ -17,8 +17,8 @@ const Download = database.define(
   }
 )
 
-User.hasMany(Download, {as: 'userId', foreignKey: {name: 'userId'}})
-Post.hasMany(Download, {as: 'post', foreignKey: {name: 'post'}})
+User.hasMany(Download, {as: 'user_id', foreignKey: {name: 'user_id'}})
+Post.hasMany(Download, {as: 'post_id', foreignKey: {name: 'post_id'}})
 
 Download.sync()
   .then((data) => {                                                                    

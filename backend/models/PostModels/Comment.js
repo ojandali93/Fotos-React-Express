@@ -21,7 +21,7 @@ const Comment = database.define(
   }
 )
 
-User.hasMany(Comment, {as: 'userId', foreignKey: {name: 'userId'}})
+User.hasMany(Comment, {as: 'user', foreignKey: {name: 'user'}})
 Post.hasMany(Comment, {as: 'post', foreignKey: {name: 'post'}})
 
 Comment.sync()
