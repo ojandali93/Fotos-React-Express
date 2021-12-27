@@ -3,16 +3,18 @@ const controller = require("../../controllers/PostControllers/PostController.js"
 
 router
   .route('/')
-  .get(controller.multiplePostController.get)
-  .post(controller.multiplePostController.post)
-  .delete(controller.multiplePostController.delete)
-  .patch(controller.multiplePostController.patch)
+  .get(controller.generalPostController.get)
+  .post(controller.generalPostController.post)
 
 router
-  .route('/:reference_id')
-  .get(controller.singlePostController.get)
-  .post(controller.singlePostController.post)
-  .delete(controller.singlePostController.delete)
-  .patch(controller.singlePostController.patch)
+  .route('/p/:post_id')
+  .get(controller.postPostController.get)
+  .delete(controller.postPostController.delete)
+  .patch(controller.postPostController.patch)
+
+router
+  .route('/u/:username')
+  .get(controller.userPostController.get)
+  .patch(controller.userPostController.patch)
 
 module.exports = router;

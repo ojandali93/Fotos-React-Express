@@ -1,8 +1,8 @@
 const sequelize = require('sequelize');
 const database = require('../database.js')
 
-const Credential = database.define(
-  'credential',
+const User = database.define(
+  'user',
   {
     id: {
       type: sequelize.INTEGER,
@@ -63,7 +63,7 @@ const Credential = database.define(
   }
 )
 
-Credential.sync()
+User.sync()
   .then((data) => {                                                                    
     console.log('Credentials model has been synced')
   })
@@ -71,4 +71,4 @@ Credential.sync()
     console.error(error)
   })
 
-module.exports = Credential
+module.exports = User

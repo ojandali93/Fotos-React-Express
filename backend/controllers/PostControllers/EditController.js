@@ -1,12 +1,12 @@
-const model = require("../../models/PostModels/Likes.js")
+const model = require("../../models/PostModels/Edits.js")
 
-const generalLikeController = {
+const generalEditController = {
   get:(req, res) => {
     console.log('success get')
   }
 }
 
-const userPostLikeController = {
+const oeEditController = {
   get:(req, res) => {
     console.log('success get')
   },
@@ -21,16 +21,16 @@ const userPostLikeController = {
   }
 }
 
-const postPostLikeController = {
+const originalEditController = {
   get:(req, res) => {
     console.log('success get')
   }
 }
 
-const postUserLikeController = {
+const editEditController = {
   get:(req, res) => {
     console.log('success get')
   }
 }
 
-module.exports = {generalLikeController, userPostLikeController, postPostLikeController, postUserLikeController};
+module.exports = {generalEditController, oeEditController, originalEditController, editEditController};

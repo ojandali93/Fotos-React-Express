@@ -12,6 +12,8 @@ const ProfileRouter = require('../../../routers/UserRoutes/ProfileRouter.js')
 const PostRouter = require('../../../routers/PostRouters/PostRouters.js')
 const FollowRouter = require('../../../routers/UserRoutes/FollowRouter.js')
 const LikeRouter = require('../../../routers/PostRouters/LikeRouters.js')
+const EditRouter = require('../../../routers/PostRouters/EditRouters.js')
+const DownloadRouter = require('../../../routers/PostRouters/DownloadRouters.js')
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -23,5 +25,6 @@ app.use('/api/profile', ProfileRouter)
 app.use('/api/follow', FollowRouter)
 app.use('/api/post', PostRouter)
 app.use('/api/like', LikeRouter)
+app.use('/api/edit', EditRouter)
 
 module.exports = app;

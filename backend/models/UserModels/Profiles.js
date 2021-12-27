@@ -1,19 +1,6 @@
 const sequelize = require('sequelize');
 const database = require('../database.js');
-const UserModel = require('../UserModels/Credentials.js')
-// const sequelize_file = reqiure('sequelize-file');
-
-// const profile_picture = sequelize_file({
-//   attribute: 'profile_picture',
-//   mimetype: /^image/,
-//   crop: true,
-//   sizes: {
-//     small: 64, 
-//     big: 128, 
-//     large: 256,
-//     x_large: 512
-//   }
-// });
+const User = require('./Users.js')
 
 const Profile = database.define(
   'profile',
@@ -112,7 +99,7 @@ const Profile = database.define(
   }
 ) 
 
-UserModel.hasOne(Profile);
+User.hasOne(Profile);
 
 Profile.sync()
   .then((data) => {

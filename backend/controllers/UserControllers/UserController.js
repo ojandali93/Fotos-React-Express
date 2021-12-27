@@ -1,6 +1,6 @@
-const model = require("../../models/UserModels/Credentials.js")
+const model = require("../../models/UserModels/Users.js")
 
-const singleUserController = {
+const usernameUserController = {
   get:(req, res) => {
     console.log('success user get')
   },
@@ -15,7 +15,7 @@ const singleUserController = {
   }
 }
 
-const multimpleUserController = {
+const generalUserController = {
   get:(req, res) => {
     console.log('success user get')
   },
@@ -30,4 +30,4 @@ const multimpleUserController = {
   }
 }
 
-module.exports = {singleUserController, multimpleUserController};
+module.exports = {usernameUserController, generalUserController};

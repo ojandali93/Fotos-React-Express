@@ -1,12 +1,12 @@
-const model = require("../../models/PostModels/Likes.js")
+const model = require("../../models/PostModels/Download.js")
 
-const generalLikeController = {
+const generalDownloadController = {
   get:(req, res) => {
     console.log('success get')
   }
 }
 
-const userPostLikeController = {
+const userPostDownloadController = {
   get:(req, res) => {
     console.log('success get')
   },
@@ -21,16 +21,16 @@ const userPostLikeController = {
   }
 }
 
-const postPostLikeController = {
+const postPostDownloadController = {
   get:(req, res) => {
     console.log('success get')
   }
 }
 
-const postUserLikeController = {
+const postUserDownloadController = {
   get:(req, res) => {
     console.log('success get')
   }
 }
 
-module.exports = {generalLikeController, userPostLikeController, postPostLikeController, postUserLikeController};
+module.exports = {generalDownloadController, userPostDownloadController, postPostDownloadController, postUserDownloadController};

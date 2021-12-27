@@ -1,6 +1,6 @@
 const model = require("../../models/UserModels/Follows.js")
 
-const userController = {
+const generalFollowController = {
   get:(req, res) => {
     console.log('success get')
   },
@@ -15,10 +15,10 @@ const userController = {
   }
 }
 
-const followController = {
+const userFollowController = {
   get:(req, res) => {
     console.log('success get')
   },
 }
 
-module.exports = {userController, followController};
+module.exports = {generalFollowController, userFollowController};

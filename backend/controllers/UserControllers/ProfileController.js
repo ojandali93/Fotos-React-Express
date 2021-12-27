@@ -1,6 +1,6 @@
 const model = require("../../models/UserModels/Profiles.js")
 
-const controller = {
+const profileController = {
   get:(req, res) => {
     console.log('success get')
   },
@@ -15,4 +15,4 @@ const controller = {
   }
 }
 
-module.exports = controller;
+module.exports = profileController;

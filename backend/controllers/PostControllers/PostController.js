@@ -1,11 +1,17 @@
 const model = require("../../models/PostModels/Posts.js")
 
-const multiplePostController = {
+const generalPostController = {
   get:(req, res) => {
     console.log('success users get')
   },
   post:(req, res) => {
     console.log('success users post')
+  }
+}
+
+const postPostController = {
+  get:(req, res) => {
+    console.log('success users get')
   },
   patch:(req, res) => {
     console.log('success users put')
@@ -15,19 +21,13 @@ const multiplePostController = {
   }
 }
 
-const singlePostController = {
+const userPostController = {
   get:(req, res) => {
     console.log('success users get')
   },
-  post:(req, res) => {
-    console.log('success users post')
-  },
   patch:(req, res) => {
     console.log('success users put')
-  },
-  delete:(req, res) => {
-    console.log('success users delete')
   }
 }
 
-module.exports = {multiplePostController, singlePostController};
+module.exports = {generalPostController, postPostController, userPostController};

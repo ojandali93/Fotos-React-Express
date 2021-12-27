@@ -1,15 +1,11 @@
 const router = require("express").Router()
-const ProfileController = require("../../controllers/UserControllers/ProfileController.js");
-
-// router
-//   .route('/profile')
-//   .get(UsersController.get)
+const profileController = require("../../controllers/UserControllers/ProfileController.js");
 
 router
   .route('/:username')
-  .get(ProfileController.get)
-  .post(ProfileController.post)
-  .delete(ProfileController.delete)
-  .patch(ProfileController.patch)
+  .get(profileController.get)
+  .post(profileController.post)
+  .delete(profileController.delete)
+  .patch(profileController.patch)
 
 module.exports = router;
