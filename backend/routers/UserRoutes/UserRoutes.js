@@ -9,7 +9,6 @@ router
 router
   .route('/:username')
   .get(controller.usernameUserController.get)
-  .post(controller.usernameUserController.post)
   .delete(controller.usernameUserController.delete)
   .patch(controller.usernameUserController.patch)
 

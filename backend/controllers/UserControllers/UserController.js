@@ -2,31 +2,80 @@ const model = require("../../models/UserModels/Users.js")
 
 const usernameUserController = {
   get:(req, res) => {
-    console.log('success user get')
-  },
-  post:(req, res) => {
-    console.log('success user post')
+    let username = req.params.username
+    model.findOne({
+      where: {username: username}
+    })
+    .then((data) => {
+      res.send(data).status(200)
+    })
+    .catch((err) => {
+      console.error(err)
+    })
   },
   patch:(req, res) => {
-    console.log('success user put')
+    let body = req.body
+    let username = req.params.username
+    model.update(
+      {
+        username: body.username,
+        password: body.password,
+        account_type: body.account_type,
+        account_status: body.account_status,
+        account_tier: body.account_tier,
+        reference_id: body.reference_id
+      },
+      {where: {username: username}}
+    )
+    .then((data) => {
+      res.send(data).status(200)
+    })
+    .catch((err) => {
+      console.error(err)
+    })
   },
   delete:(req, res) => {
-    console.log('success user delete')
+    let username = req.params.username
+    model.destroy({
+      where: {username: username}
+    })
+    .then((data) => {
+      res.send(data).status(200)
+    })
+    .catch((err) => {
+      console.error(err)
+    })
   }
 }
 
 const generalUserController = {
   get:(req, res) => {
-    console.log('success user get')
+    model.findAll()
+    .then((data) => {
+      res.send(data).status(200)
+    })
+    .catch((err) => {
+      console.error(err)
+    })
   },
   post:(req, res) => {
-    console.log('success user post')
-  },
-  patch:(req, res) => {
-    console.log('success user put')
-  },
-  delete:(req, res) => {
-    console.log('success user delete')
+    let body = req.body 
+    console.log(body)
+    model.create({
+      username: body.username,
+      password: body.password,
+      account_type: body.account_type,
+      account_status: body.account_status,
+      account_tier: body.account_tier,
+      reference_id: body.reference_id
+    })
+    .then((data) => {
+      res.send(data).status(200)
+    })
+    .catch((err) => {
+      console.error(err)
+      res.send(err).status(400)
+    })
   }
 }
 

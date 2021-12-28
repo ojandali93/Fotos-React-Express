@@ -13,7 +13,7 @@ const User = database.define(
       type: sequelize.STRING,
       allowNull: false,
       validate: {
-        is: ["^[a-z]+$",'_'],
+        isAlphanumeric: true,
         min: 4,
         max: 22,
       }
@@ -23,7 +23,7 @@ const User = database.define(
       allowNull: false,
       validate: {
         min: 6,
-        max: 16
+        max: 36
       }
     },
     account_type: {
@@ -46,7 +46,7 @@ const User = database.define(
       type: sequelize.STRING,
       allowNull: false,
       validate: {
-        isAlphaNumeric: true,
+        isAlphanumeric: true,
         isIn: [['tier1', 'tier2', 'tier3']]
       }
     },
@@ -54,7 +54,7 @@ const User = database.define(
       type: sequelize.STRING,
       allowNull: false,
       validate: {
-        isAlphaNumeric: true,
+        isAlphanumeric: true,
       }
     },
   },
