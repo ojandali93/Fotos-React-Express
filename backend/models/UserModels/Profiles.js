@@ -21,7 +21,6 @@ const Profile = database.define(
       type: sequelize.STRING,
       allowNull: true,
       validate: {
-        isAlpha: true,
         max: 36
       }
     },
