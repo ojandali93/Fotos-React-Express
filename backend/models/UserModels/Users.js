@@ -26,6 +26,12 @@ const User = database.define(
         max: 36
       }
     },
+    email: {
+      type: sequelize.STRING,
+      validate: {
+        isEmail: true
+      }
+    },
     account_type: {
       type: sequelize.STRING,
       allowNull: false,

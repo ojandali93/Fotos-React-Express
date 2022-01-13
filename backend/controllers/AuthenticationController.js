@@ -12,13 +12,16 @@ const loginController = {
           req.session.authenticated = true
           User.findOne({where:{username:username}})
           .then((data) => {
+            console.log('user found')
             req.session.user = {
               username:data.username,
               userId:data.id
             }
-            res.send(req.session).status(200)
+            console.log(req.session)
+            res.status(201).send(data)
           })
           .catch((err) => {
+            console.log('user not found')
             res.status(403)
           })
         }

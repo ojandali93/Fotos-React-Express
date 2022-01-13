@@ -10,6 +10,20 @@ const Profile = database.define(
       autoIncrement: true, 
       primaryKey: true,
     },
+    f_name: {
+      type: sequelize.STRING,
+      allowNull: false,
+      validate: {
+        isAlpha: true
+      }
+    },
+    l_name: {
+      type: sequelize.STRING,
+      allowNull: false,
+      validate: {
+        isAlpha: true
+      }
+    },
     bio: {
       type: sequelize.STRING,
       allowNull: true,

@@ -1,7 +1,9 @@
 import React from 'react'
-import NavbarMenu from './NavbarMenu.js'
+import LoggedInMenu from './LoggedInMenu.js'
+import LoggedOutMenu from './LoggedOutMenu.js'
 
-export default function Navbar() {
+export default function Navbar(props) {
+  const { loggedIn } = props
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -10,7 +12,9 @@ export default function Navbar() {
         </button>
         <div class="collapse navbar-collapse" id="navbar">
           <div class="navbar-nav">
-            <NavbarMenu />
+            {
+              loggedIn === false ? <LoggedOutMenu/> : <LoggedInMenu />
+            }
           </div>
         </div>
       </nav>

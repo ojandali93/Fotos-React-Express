@@ -4,20 +4,17 @@ const bcrypt = require('Bcrypt')
 const usernameUserController = {
 
   get:(req, res) => {
-    if(req.session.authenticated){
-      model.findOne({
-        where: {id: req.session.user.userId}
-      })
-      .then((data) => {
-        res.send(data).status(200)
-      })
-      .catch((err) => {
-        console.error(err)
-      })
-    }
+    model.findOne({
+      where: {id: req.session.user.userId}
+    })
+    .then((data) => {
+      res.send(data).status(200)
+    })
+    .catch((err) => {
+      console.error(err)
+    })
   },
   patch:(req, res) => {
-    if(req.session.authenticated){
       let body = req.body
       model.update(
         {
@@ -36,10 +33,8 @@ const usernameUserController = {
       .catch((err) => {
         console.error(err)
       })
-    }
   },
   delete:(req, res) => {
-    if(req.session.authenticated){
       let username = req.params.username
       model.destroy({
         where: {id: req.session.user.userId}
@@ -51,12 +46,10 @@ const usernameUserController = {
         console.error(err)
       })
     }
-  }
 }
 
 const generalUserController = {
   get:(req, res) => {
-    if(req.session.authenticated){
       model.findAll()
       .then((data) => {
         res.send(data).status(200)
@@ -64,7 +57,6 @@ const generalUserController = {
       .catch((err) => {
         console.error(err)
       })
-    }
   },
   post:(req, res) => {
     let body = req.body 
