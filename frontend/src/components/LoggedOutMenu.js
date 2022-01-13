@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom'
 
 export default function LoggedOutMenu() {
   return (
@@ -6,10 +7,10 @@ export default function LoggedOutMenu() {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/">LOGIN</a>
+            <Link class="nav-link" to="/login">LOGIN</Link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/photos">SIGNUP</a>
+            <Link class="nav-link" to="/signup">SIGNUP</Link>
           </li>
         </ul>
       </div>

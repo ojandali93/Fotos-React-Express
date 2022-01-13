@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import LoggedOutMenu from './LoggedOutMenu'
 import { ContentContext } from './App.js'
 
 export default function Login(props) {
@@ -6,6 +7,7 @@ export default function Login(props) {
 
   return (
     <div>
+      <LoggedOutMenu/>
       <form>
         <div>
           <label>LOGIN</label>
