@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Feed() {
+export default function Logout() {
   return (
     <div>
-      Home page
+      Logout
     </div>
   )
 }
