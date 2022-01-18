@@ -50,7 +50,7 @@ export default function Signup(props) {
           <label>USERNAME</label>
           <input 
           type="text" 
-          class="form-control" 
+          className="form-control" 
           name="username" id="username" 
           aria-describedby="username" 
           placeholder="Enter Username" 
@@ -61,7 +61,7 @@ export default function Signup(props) {
           <label>PASSWORD</label>
           <input 
           type="password" 
-          class="form-control" 
+          className="form-control" 
           name="password" 
           d="password" 
           placeholder="Enter Password" 
@@ -72,9 +72,9 @@ export default function Signup(props) {
           <label>VERIFY PASSWORD</label>
           <input 
           type="password" 
-          class="form-control" 
+          className="form-control" 
           name="verify" 
-          d="verify" 
+          id="verify" 
           placeholder="Re-enter Password" 
           value={verify} 
           onChange={(e) => setVerify(e.target.value)}/>
@@ -83,14 +83,14 @@ export default function Signup(props) {
           <label>Email</label>
           <input 
           type="text" 
-          class="form-control" 
+          className="form-control" 
           name="email" id="email" 
           aria-describedby="email" 
           placeholder="Enter Email" 
           value={email} 
           onChange={(e) => setEmail(e.target.value)} />
         </div>
-        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" value="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
   )

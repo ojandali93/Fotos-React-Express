@@ -7,10 +7,7 @@ export default function Navbar() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
-            <Link className="nav-link" to="/login">LOGIN</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/signup">SIGNUP</Link>
+            <Link className="nav-link" to="/logout">LOGOUT</Link>
           </li>
         </ul>
       </div>

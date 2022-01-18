@@ -19,7 +19,6 @@ export default function Login(props) {
       "password":password,
     })
     .then((data) => {
-      console.log(data.data)
       setCurrentUser(data.data)
       setLoggedIn(true)
       return(<Navigate to='/' />)
@@ -40,7 +39,7 @@ export default function Login(props) {
           <label>USERNAME</label>
           <input 
           type="text" 
-          class="form-control" 
+          className="form-control" 
           name="username" id="username" 
           aria-describedby="username" 
           placeholder="Enter Username" 
@@ -51,14 +50,14 @@ export default function Login(props) {
           <label>PASSWORD</label>
           <input 
           type="password" 
-          class="form-control" 
+          className="form-control" 
           name="password" 
           d="password" 
           placeholder="Enter Password" 
           value={password} 
           onChange={(e) => setPassword(e.target.value)}/>
         </div>
-        <button type="submit" value="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" value="submit" className="btn btn-primary">Submit</button>
       </form>
     </div>
   )

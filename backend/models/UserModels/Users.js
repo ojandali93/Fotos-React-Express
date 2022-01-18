@@ -28,9 +28,6 @@ const User = database.define(
     },
     email: {
       type: sequelize.STRING,
-      validate: {
-        isEmail: true
-      }
     },
     account_type: {
       type: sequelize.STRING,

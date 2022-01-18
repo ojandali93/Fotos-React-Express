@@ -3,7 +3,7 @@ const mysql = require('mysql2');
 
 require('dotenv').config()
 
-const database = new sequelize('fotos', 'mysql_username', 'mysql_password',
+const database = new sequelize('fotos', 'omarjandali', 'Kabuto_razer21',
   {
     'host': 'localhost',
     'dialect': 'mysql'

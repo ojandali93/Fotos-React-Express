@@ -27,7 +27,7 @@ export default function Profile() {
         <label>FIRST NAME</label>
         <input 
         type="text" 
-        class="form-control" 
+        className="form-control" 
         name="firstName" id="firstName" 
         aria-describedby="ffirstName" 
         placeholder="Enter First Name" 
@@ -38,7 +38,7 @@ export default function Profile() {
         <label>Last Name</label>
         <input 
         type="text" 
-        class="form-control" 
+        className="form-control" 
         name="lastName" id="lastName" 
         aria-describedby="lastName" 
         placeholder="Enter Last Name" 
@@ -48,7 +48,7 @@ export default function Profile() {
       <div>
         <label>BIO</label>
         <textarea
-        class="form-control" 
+        className="form-control" 
         name="lastName" id="lastName" 
         aria-describedby="lastName" 
         placeholder="Enter Last Name" 
@@ -59,7 +59,7 @@ export default function Profile() {
         <label>LOCATION</label>
         <input 
         type="text" 
-        class="form-control" 
+        className="form-control" 
         name="location" id="location" 
         aria-describedby="location" 
         placeholder="Enter Location" 
@@ -70,7 +70,7 @@ export default function Profile() {
         <label>FACEBOOK</label>
         <input 
         type="link" 
-        class="form-control" 
+        className="form-control" 
         name="facebook" id="facebook" 
         aria-describedby="facebook" 
         placeholder="Enter Facebook" 
@@ -81,7 +81,7 @@ export default function Profile() {
         <label>INSTAGRAM</label>
         <input 
         type="link" 
-        class="form-control" 
+        className="form-control" 
         name="instagram" id="instagram" 
         aria-describedby="instagram" 
         placeholder="Enter Instagram" 
@@ -92,7 +92,7 @@ export default function Profile() {
         <label>TWITTER</label>
         <input 
         type="link" 
-        class="form-control" 
+        className="form-control" 
         name="twitter" id="twitter" 
         aria-describedby="twitter" 
         placeholder="Enter Twitter" 
@@ -103,14 +103,14 @@ export default function Profile() {
         <label>WEBSITE</label>
         <input 
         type="link" 
-        class="form-control" 
+        className="form-control" 
         name="website" id="website" 
         aria-describedby="website" 
         placeholder="Enter Website" 
         value={website} 
         onChange={(e) => setWebsite(e.target.value)} />
       </div>
-      <button type="submit" value="submit" class="btn btn-primary" onClick={() => {handleProfile()}}>Submit</button>
+      <button type="submit" value="submit" className="btn btn-primary" onClick={() => {handleProfile()}}>Submit</button>
     </form>
   </div>
   )
