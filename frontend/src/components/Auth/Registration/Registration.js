@@ -37,48 +37,6 @@ export default function Registration(props) {
     setRegistrationStep(1)
   }
 
-  // function confirmRegistration(e){
-  //   e.preventDefault()
-  //   if(password === verify){
-  //     axios.all([
-  //       axios.post('/api/user', {
-  //         'username':username,
-  //         'password':password,
-  //         'email':email,
-  //         'account_type':'P',
-  //         'account_status':'Active',
-  //         'account_tier':'tier1',
-  //         'reference_id':'ewvwe98w9'
-  //       }),
-  //       axios.post('/api/profile/', {
-  //         'f_name':firstName,
-  //         'l_name':lastName,
-  //         'bio':bio,
-  //         'location':location,
-  //         'sm_facebook':facebook,
-  //         'sm_instagram':instagram,
-  //         'sm_twitter':twitter,
-  //         'sm_website':website,
-  //         'followers':0,
-  //         'following':0,
-  //         'photos':0,
-  //         'edits':0,
-  //         'downloads':0,
-  //         'userId':currentUser.id
-  //       })
-  //     ])
-  //     .then(axios.spread((userData, profileData) => {
-  //       console.log(userData)
-  //       console.log(profileData)
-  //       // setLoggedIn(true)
-  //       // setCurrentUser(data.data)
-  //       return(<Navigate to='/' />)
-  //     }))
-  //     .catch((err) => {
-  //       console.error(err)
-  //     })
-  //   }
-  // }
   function confirmRegistration(e){
     e.preventDefault()
     if(password === verify){
@@ -97,7 +55,6 @@ export default function Registration(props) {
       'reference_id':'ewvwe98w9'
     })
     .then((data) => {
-      // console.log(data.data)
       setLoggedIn(true)
       setCurrentUser(data.data)
       createProfile(data.data.user.userId)
