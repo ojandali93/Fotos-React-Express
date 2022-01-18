@@ -4,9 +4,7 @@ const User = require('../../models/UserModels/Users.js')
 const profileController = {
   get:(req, res) => {
     if(req.session.authenticated){
-      Profile.findOne({
-        where: {userId: req.session.user.userId}
-      })
+      Profile.findAll()
       .then((data) => {
         res.send(data).status(200)
       })
@@ -16,9 +14,11 @@ const profileController = {
     }
   },
   post:(req, res) => {
-    if(req.session.authenticated){
+    // if(req.session.authenticated){
       let body = req.body
       Profile.create({
+        f_name: body.f_name,
+        l_name: body.l_name,
         bio: body.bio,
         location: body.location,
         sm_facebook: body.sm_facebook,
@@ -30,7 +30,7 @@ const profileController = {
         photos: body.photos,
         downloads: body.downloads,
         edits: body.edits,
-        userId: req.session.user.userId
+        userId: body.userId
       })
       .then((data) => {
         res.send(data).status(200)
@@ -39,7 +39,7 @@ const profileController = {
         console.error(err)
         res.send(err).status(400)
       })
-    }
+    // }
   },
   patch:(req, res) => {
     if(req.session.authenticated){

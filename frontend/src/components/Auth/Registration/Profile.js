@@ -1,24 +1,32 @@
-import React, { useState } from 'react'
-import Navbar from './Navbar'
+import React, { useContext } from 'react'
+// import Navbar from '../Navbar'
+import { RegistrationContext } from './Registration'
 
 export default function Profile() {
-
-  const [firstName, setFirstName] = useState('')
-  const [lastName, setLastName] = useState('')
-  const [bio, setBio] = useState('')
-  const [location, setLocation] = useState('')
-  const [facebook, setFacebook] = useState('')
-  const [instagram, setInstagram] = useState('')
-  const [twitter, setTwitter] = useState('')
-  const [website, setWebsite] = useState('')
-
-  function handleProfile(){
-    console.log('creating a profile')
-  }
+  const {
+    firstName,
+    lastName,
+    bio,
+    location,
+    facebook,
+    instagram,
+    twitter,
+    website,
+    setFirstName,
+    setLastName,
+    setBio,
+    setLocation,
+    setFacebook,
+    setInstagram,
+    setTwitter,
+    setWebsite,
+    previousStep,
+    confirmRegistration
+  } = useContext(RegistrationContext)
 
   return (
     <div>
-    <Navbar/>
+    {/* <Navbar/> */}
     <form>
       <div>
         <label>PROFILE</label>
@@ -35,7 +43,7 @@ export default function Profile() {
         onChange={(e) => setFirstName(e.target.value)} />
       </div>
       <div>
-        <label>Last Name</label>
+        <label>LAST NAME</label>
         <input 
         type="text" 
         className="form-control" 
@@ -110,7 +118,8 @@ export default function Profile() {
         value={website} 
         onChange={(e) => setWebsite(e.target.value)} />
       </div>
-      <button type="submit" value="submit" className="btn btn-primary" onClick={() => {handleProfile()}}>Submit</button>
+      <button className="btn btn-primary" onClick={(e) => {previousStep(e)}}>PREVIOUS STEP</button>
+      <button className="btn btn-primary" onClick={(e) => {confirmRegistration(e)}}>CONFIRM</button>
     </form>
   </div>
   )

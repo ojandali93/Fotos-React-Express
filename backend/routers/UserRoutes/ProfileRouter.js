@@ -2,7 +2,7 @@ const router = require("express").Router()
 const profileController = require("../../controllers/UserControllers/ProfileController.js");
 
 router
-  .route('/:username')
+  .route('/')
   .get(profileController.get)
   .post(profileController.post)
   .delete(profileController.delete)
