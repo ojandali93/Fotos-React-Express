@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('logger');
 const session = require('express-session');
 const path = require('path');
+const fileUpload = require('express-fileupload');
 
 const app = express();
 
@@ -31,6 +32,9 @@ app.use(session({
   saveUninitialized: false,
 }))
 app.use(morgan('dev'))
+app.use(fileUpload({
+  limits: { fileSize: 100 * 1920 * 1920 },
+}));
 
 app.use('/api/auth', AuthenticationRouter)
 app.use('/api/user', UserRouter)

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-// import Navbar from '../Navbar'
+import FileBase64 from 'react-file-base64'
 import { RegistrationContext } from './Registration'
 
 export default function Profile() {
@@ -12,6 +12,7 @@ export default function Profile() {
     instagram,
     twitter,
     website,
+    profilePicture,
     setFirstName,
     setLastName,
     setBio,
@@ -19,6 +20,7 @@ export default function Profile() {
     setFacebook,
     setInstagram,
     setTwitter,
+    handleProfilePicture,
     setWebsite,
     previousStep,
     confirmRegistration
@@ -30,6 +32,16 @@ export default function Profile() {
     <form>
       <div>
         <label>PROFILE</label>
+      </div>
+      <div>
+        <label>PROFILE PICTURE</label>
+        <input 
+        type="file" 
+        className="form-control" 
+        name="profilePicture" id="profilePicture" 
+        aria-describedby="profilePicture" 
+        placeholder="Upload Profile Picture" 
+        onChange={(e) => handleProfilePicture(e)} />
       </div>
       <div>
         <label>FIRST NAME</label>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Navigate } from 'react-router-dom'
 
 import Signup from './Signup'
@@ -28,6 +28,12 @@ export default function Registration(props) {
   const [instagram, setInstagram] = useState('')
   const [twitter, setTwitter] = useState('')
   const [website, setWebsite] = useState('')
+  const [profilePicture, setProfilePicture] = useState('')
+
+  useEffect(() => {
+    console.log('new photo uploaded')
+    console.log(profilePicture)
+  }, [profilePicture])
 
   function nextStep(){
     setRegistrationStep(2)
@@ -42,6 +48,10 @@ export default function Registration(props) {
     if(password === verify){
       createAccount()
     }
+  }
+
+  function handleProfilePicture(e){
+    setProfilePicture(e.target.files[0])
   }
 
   function createAccount(){
@@ -65,21 +75,28 @@ export default function Registration(props) {
   }
 
   function createProfile(userId){
-    axios.post('/api/profile/', {
-      'f_name':firstName,
-      'l_name':lastName,
-      'bio':bio,
-      'location':location,
-      'sm_facebook':facebook,
-      'sm_instagram':instagram,
-      'sm_twitter':twitter,
-      'sm_website':website,
-      'followers':0,
-      'following':0,
-      'photos':0,
-      'edits':0,
-      'downloads':0,
-      'userId':userId
+    let data = new FormData()
+    data.append('f_name', firstName)
+    data.append('l_name', lastName)
+    data.append('bio', bio)
+    data.append('location', location)
+    data.append('sm_facebook', facebook)
+    data.append('sm_instagram', instagram)
+    data.append('sm_twitter', twitter)
+    data.append('sm_website', website)
+    data.append('followers', 0)
+    data.append('following', 0)
+    data.append('photos', 0)
+    data.append('edits', 0)
+    data.append('downloads', 0)
+    data.append('userId', userId)
+    data.append('profile_pic', profilePicture)
+    console.log(data)
+    axios({
+      method: "post",
+      url: "/api/profile/",
+      data: data,
+      headers: { "Content-Type": "multipart/form-data" },
     })
     .then((data) => {
       return(<Navigate to='/' />)
@@ -104,6 +121,7 @@ export default function Registration(props) {
     instagram,
     twitter,
     website,
+    profilePicture,
     setRegistrationStep,
     setUsername,
     setPassword,
@@ -118,6 +136,7 @@ export default function Registration(props) {
     setInstagram,
     setTwitter,
     setWebsite,
+    handleProfilePicture,
     nextStep,
     previousStep,
     confirmRegistration

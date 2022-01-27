@@ -10,6 +10,10 @@ const Profile = database.define(
       autoIncrement: true, 
       primaryKey: true,
     },
+    profile_pic: {
+      type: sequelize.BLOB,
+      allowNull: true
+    },
     f_name: {
       type: sequelize.STRING,
       allowNull: false,

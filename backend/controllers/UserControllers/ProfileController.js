@@ -17,7 +17,16 @@ const profileController = {
   },
   post:(req, res) => {
     let body = req.body
+    let userIdImage = body.userId
+    let profilePic = req.files.profile_pic
+    let uploadPhotoName =  userIdImage.toString() + '-' + profilePic.name
+    let uploadPath = '/Users/omarjandali/dev/fotos-web/backend/static/images/profile/' + uploadPhotoName
+    profilePic.mv(uploadPath, function(err) {
+      if(err)
+        console.log(err)
+    })
     Profile.create({
+      profile_pic: uploadPhotoName,
       f_name: body.f_name,
       l_name: body.l_name,
       bio: body.bio,
